@@ -32,7 +32,7 @@ void converterUnidades(double valor, int unidadeOrigem, int unidadeDestino) {
     printf("Resultado: %.2f\n", resultado);
 }
 
-int main() {
+void InterfaceConversaoComprimento(){
     setlocale(LC_ALL,NULL);
 
     double valor;
@@ -77,6 +77,11 @@ int main() {
     }
 
     converterUnidades(valor, unidadeOrigem, unidadeDestino);
+}
+
+int main() {
+
+    InterfaceConversaoComprimento();
 
     return 0;
 }
