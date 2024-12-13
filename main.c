@@ -10,7 +10,7 @@ void exibirMenu() {
     printf("         \033[1;34mMENU PRINCIPAL\033[0m         \n");
     printf("==============================\n");
     printf("\033[1;32m[1]\033[0m Comprimento\n");
-    printf("\033[1;32m[2]\033[0m Opcao 2\n");
+    printf("\033[1;32m[2]\033[0m Temperatura\n");
     printf("\033[1;32m[3]\033[0m Opcao 3\n");
     printf("\033[1;32m[0]\033[0m Sair\n");
     printf("==============================\n");
@@ -103,13 +103,109 @@ void InterfaceConversaoComprimento(){
         if (scanf("%d", &unidadeDestino) == 1 && (unidadeDestino >= 1 && unidadeDestino <= 3)) {
             break;
         } else {
-            printf("Unidade de destino inválida! Escolha 1, 2 ou 3.\n");
+            printf("\033[1;32m->\033[0m Unidade de destino inválida! Escolha 1, 2 ou 3.\n");
             while (getchar() != '\n'); // Limpa o buffer de entrada
         }
     }
 
     converterUnidades(valor, unidadeOrigem, unidadeDestino);
 }
+
+//Função Temperatira
+
+void converterCelsius(int escolha, double valor){
+    double resultado;
+    if (escolha == 1) {
+        resultado = valor;
+    }
+    if (escolha == 2) {
+        resultado = valor + 273.15;
+    }
+    if (escolha == 3) {
+        resultado = (valor * 1.8) + 32;
+    }
+    printf("\033[1;32m->\033[0m Resultado: %.2f\n", resultado);
+}
+
+void converterKelvin(int escolha, double valor){
+    double resultado;
+    if (escolha == 1) {
+        resultado = valor - 273.15;
+    }
+    if (escolha == 2) {
+        resultado = valor;
+    }
+    if (escolha == 3) {
+        resultado = ((valor - 273.15) * 1.8) + 32;
+    }
+    printf("\033[1;32m->\033[0m Resultado: %.2f\n", resultado);
+}
+
+void converterFahrenheit(int escolha, double valor){
+    double resultado;
+    if (escolha == 1) {
+        resultado = (valor - 32) / 1.8;
+    }
+    if (escolha == 2) {
+        resultado = ((valor - 32) * 5.0 / 9.0) + 273.15;
+    }
+    if (escolha == 3) {
+        resultado = valor;
+    }
+    printf("\033[1;32m->\033[0m Resultado: %.2f\n", resultado);
+}
+
+void InterfaceConversaoTemperatura(){
+    double valor;
+    int escolha;
+    
+	printf("=====================================================================\n");
+	printf("            \033[1;34mConversor de Temperatura\033[0m         \n");
+	printf("=====================================================================\n");
+    printf("\033[1;32m->\033[0m Digite o valor que deseja converter: ");
+    scanf("%lf", &valor);
+
+
+	printf("=======================================================\n");
+	printf("\033[1;34mDigite a temperatura de Origem:\033[0m         \n");
+	printf("=======================================================\n");
+	
+    printf("\033[1;32m[1]\033[0m  Celsius\n");
+   	printf("\033[1;32m[2]\033[0m  Kelvin\n");
+    printf("\033[1;32m[3]\033[0m  Fahrenheit\n");
+    printf("==============================\n");
+    scanf("%d", &escolha);
+
+    if (escolha < 1 || escolha > 3) {
+        printf("\033[1;32m->\033[0m Escolha invalida\n");
+        return;
+    }
+
+	printf("=======================================================\n");
+	printf("\033[1;34mDigite a temperatura de Destino:\033[0m         \n");
+	printf("=======================================================\n");
+	
+    printf("\033[1;32m[1]\033[0m  Celsius\n");
+   	printf("\033[1;32m[2]\033[0m  Kelvin\n");
+    printf("\033[1;32m[3]\033[0m  Fahrenheit\n");
+    printf("==============================\n");
+    int destino;
+    scanf("%d", &destino);
+
+    if (destino < 1 || destino > 3) {
+        printf("\033[1;32m->\033[0m Escolha invalida\n");
+        return;
+    }
+
+    if (escolha == 1) {
+        converterCelsius(destino, valor);
+    } else if (escolha == 2) {
+        converterKelvin(destino, valor);
+    } else if (escolha == 3) {
+        converterFahrenheit(destino, valor);
+    }
+}
+
 
 int main() {
 
@@ -127,7 +223,10 @@ int main() {
                 InterfaceConversaoComprimento();
                 break;
             case 2:
-                printf("\n\033[1;36mVoce escolheu a Opcao 2!\033[0m\n");
+                printf("\n\033[1;36mVoce escolheu a Temperatura!\033[0m\n");
+                system("pause"); // Pausar o terminal
+                system("cls || clear"); // Limpa o terminal
+                InterfaceConversaoTemperatura();
                 break;
             case 3:
                 printf("\n\033[1;36mVoce escolheu a Opcao 3!\033[0m\n");
