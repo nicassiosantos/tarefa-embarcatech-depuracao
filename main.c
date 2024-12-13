@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
+#include <stdlib.h>
 
 void converterCelsius(int escolha, double valor){
     double resultado;
@@ -43,6 +44,33 @@ void converterFahrenheit(int escolha, double valor){
     printf("Resultado: %.2f\n", resultado);
 }
 
+void converterUnidadesMassa(int origem, int destino, double valor){
+    double resultado;
+    
+
+    //transformando o valor de origem para o valor base (quilograma)
+    if(origem == 1){
+        resultado = valor;
+    }else if(origem == 2){
+        resultado = valor / 1000;
+    } else if(origem == 3){
+        resultado = valor * 1000;
+    }
+    
+    //convertendo de quilograma para a unidade de destino
+    if(destino == 1){
+        resultado = resultado;
+    } else if (destino == 2){
+        resultado *= 1000;
+    } else if (destino == 3){
+        resultado /= 1000;
+    }
+
+    printf("Resultado da conversao: %.2lf", resultado);
+    
+    
+}
+
 void InterfaceConversaoTemperatura(){
     double valor;
     int escolha;
@@ -81,6 +109,47 @@ void InterfaceConversaoTemperatura(){
     } else if (escolha == 3) {
         converterFahrenheit(destino, valor);
     }
+}
+
+void InterfaceConversaoMassa(){
+    double valor;
+    int unidadeOrigem;
+    int unidadeDestino;
+
+    printf("CONVERSOR DE UNIDADES DE MASSA\n");
+
+    printf("Digite o valor que deseja converter: \n");
+    scanf("%lf", &valor);
+
+
+    do{
+        printf("1. Quilograma\n2.Grama\n3.Tonelada\n");
+        printf("Escolha a unidade correspondente ao valor: \n");
+        scanf("%d", &unidadeOrigem);
+
+        if(unidadeOrigem > 0 && unidadeOrigem < 4){
+            break;
+        }else{
+            printf("Digite uma opcao valida\n");
+            while (getchar() != '\n');
+        }
+    }while(1);
+    system("cls" || "clear"); //limpar tela
+
+    do{
+        printf("Para qual unidade de massa quer converter?\n");
+        printf("1. Quilograma\n2.Grama\n3.Tonelada\n");
+        scanf("%d", &unidadeDestino);
+
+        if(unidadeDestino > 0 && unidadeDestino < 4){
+            break;
+        }else{
+            printf("Digite uma opcao valida\n");
+        }
+    }while(1);
+    system("cls" || "clear");
+
+    converterUnidadesMassa(unidadeOrigem, unidadeDestino, valor);
 }
 
 void converterUnidades(double valor, int unidadeOrigem, int unidadeDestino) {
@@ -165,6 +234,7 @@ int main() {
 
     InterfaceConversaoComprimento();
     InterfaceConversaoTemperatura(); 
+    InterfaceConversaoMassa();
     
     return 0;
 }
