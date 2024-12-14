@@ -250,7 +250,7 @@ void InterfaceConversaoMassa(){
     printf("=====================================================================\n");
 	printf("            \033[1;34mConversor de Massa\033[0m         \n");
 	printf("=====================================================================\n");
-    printf("\033[1;32m->\033[0m Digite o valor que deseja converter: ");
+    printf("\033[1;32m->\033[0m Digite o valor que deseja converter: \n");
     scanf("%lf", &valor);
     while (getchar() != '\n');
 
@@ -273,10 +273,10 @@ void InterfaceConversaoMassa(){
             while (getchar() != '\n');
         }
     }while(1);
-    system("cls"); //limpar tela
+   
 
     do{
-        printf("=======================================================\n");
+        printf("\n=======================================================\n");
 	    printf("\033[1;34mDigite a massa de Destino:\033[0m         \n");
 	    printf("=======================================================\n");
 	
@@ -293,7 +293,7 @@ void InterfaceConversaoMassa(){
             printf("\033[1;32m->\033[0m Escolha invalida\n");
         }
     }while(1);
-    system("cls");
+    
 
     converterUnidadesMassa(unidadeOrigem, unidadeDestino, valor);
 }
