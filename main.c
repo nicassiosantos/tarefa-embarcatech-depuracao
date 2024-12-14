@@ -459,7 +459,7 @@ void converterDeMph(double valor) {
     printf("%.2f mph equivale a %.2f km/h e %.2f m/s\n", valor, quilometrosPorHora, metrosPorSegundo);
 }
 
-int main() {
+void iniciarConversor() {
     int opcao;
     double valor;
     
@@ -474,7 +474,7 @@ int main() {
     
     if (opcao < 1 || opcao > 3) {
         printf("Opção inválida!\n");
-        return 1;
+        return;
     }
     
     printf("Digite o valor da velocidade: ");
@@ -493,9 +493,8 @@ int main() {
         default:
             printf("Opção inválida!\n");
     }
-    
-    return 0;
 }
+
 
 int main() {
 
