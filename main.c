@@ -15,6 +15,7 @@ void exibirMenu() {
     printf("\033[1;32m[3]\033[0m Massa\n");
     printf("\033[1;32m[4]\033[0m Volume\n");
     printf("\033[1;32m[5]\033[0m Tempo\n");
+    printf("\033[1;32m[6]\033[0m Velocidade\n");
     printf("\033[1;32m[0]\033[0m Sair\n");
     printf("==============================\n");
     printf("Escolha qual conversao deseja fazer: ");
@@ -435,62 +436,6 @@ void InterfaceConversaoTempo(){
     }while(opcao < 1 || opcao > 3);
     
 }
-int main() {
-
-    int opcao;
-
-    do {
-        exibirMenu();
-        scanf("%d", &opcao);
-
-        switch (opcao) {
-            case 1:
-                printf("\n\033[1;36mVoce escolheu a Comprimento!\033[0m\n");
-                system("pause"); // Pausar o terminal
-                system("cls || clear"); // Limpa o terminal
-                InterfaceConversaoComprimento();
-                break;
-            case 2:
-                printf("\n\033[1;36mVoce escolheu a Temperatura!\033[0m\n");
-                system("pause"); // Pausar o terminal
-                system("cls || clear"); // Limpa o terminal
-                InterfaceConversaoTemperatura();
-                break;
-            case 3:
-                printf("\n\033[1;36mVoce escolheu a Massa!\033[0m\n");
-                system("pause"); // Pausar o terminal
-                system("cls || clear"); // Limpa o terminal
-                InterfaceConversaoMassa();
-                break;
-            case 4: 
-                printf("\n\033[1;36mVoce escolheu o Volume!\033[0m\n");
-                system("pause"); // Pausar o terminal
-                system("cls || clear"); // Limpa o terminal
-                InterfaceConversaoVolume();
-                break;
-	    case 5:
-                printf("\n\033[1;36mVoce escolheu o Tempo!\033[0m\n");
-                system("pause"); // Pausar o terminal
-                system("cls || clear"); // Limpa o terminal
-                InterfaceConversaoTempo();
-                break;
-            case 0:
-                printf("\n\033[1;31mSaindo... Ate logo!\033[0m\n");
-                break;
-            default:
-                printf("\n\033[1;31mOpcao invalida! Tente novamente.\033[0m\n");
-        }
-
-        if (opcao != 0) {
-            printf("\nPressione Enter para continuar...");
-            getchar(); // Pega o Enter deixado no buffer
-            getchar(); // Aguarda o usuário pressionar Enter
-        }
-
-    } while (opcao != 0);
-
-    return 0;
-}
 
 
 // Função para converter de km/h para m/s e mph
@@ -549,5 +494,68 @@ int main() {
             printf("Opção inválida!\n");
     }
     
+    return 0;
+}
+
+int main() {
+
+    int opcao;
+
+    do {
+        exibirMenu();
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("\n\033[1;36mVoce escolheu a Comprimento!\033[0m\n");
+                system("pause"); // Pausar o terminal
+                system("cls || clear"); // Limpa o terminal
+                InterfaceConversaoComprimento();
+                break;
+            case 2:
+                printf("\n\033[1;36mVoce escolheu a Temperatura!\033[0m\n");
+                system("pause"); // Pausar o terminal
+                system("cls || clear"); // Limpa o terminal
+                InterfaceConversaoTemperatura();
+                break;
+            case 3:
+                printf("\n\033[1;36mVoce escolheu a Massa!\033[0m\n");
+                system("pause"); // Pausar o terminal
+                system("cls || clear"); // Limpa o terminal
+                InterfaceConversaoMassa();
+                break;
+            case 4: 
+                printf("\n\033[1;36mVoce escolheu o Volume!\033[0m\n");
+                system("pause"); // Pausar o terminal
+                system("cls || clear"); // Limpa o terminal
+                InterfaceConversaoVolume();
+                break;
+	    case 5:
+                printf("\n\033[1;36mVoce escolheu o Tempo!\033[0m\n");
+                system("pause"); // Pausar o terminal
+                system("cls || clear"); // Limpa o terminal
+                InterfaceConversaoTempo();
+                break;
+            case 6:
+                printf("\n\033[1;36mVoce escolheu o Velocidade!\033[0m\n");
+                system("pause"); // Pausar o terminal
+                system("cls || clear"); // Limpa o terminal
+                InterfaceConversaoTempo();
+                break;
+            case 0:
+                printf("\n\033[1;31mSaindo... Ate logo!\033[0m\n");
+                break;
+            default:
+                printf("\n\033[1;31mOpcao invalida! Tente novamente.\033[0m\n");
+        }
+
+        if (opcao != 0) {
+            printf("\nPressione Enter para continuar...");
+            getchar(); // Pega o Enter deixado no buffer
+            getchar(); // Aguarda o usuário pressionar Enter
+        }
+
+    } while (opcao != 0);
+
     return 0;
 }
