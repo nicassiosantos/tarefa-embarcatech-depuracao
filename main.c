@@ -14,6 +14,7 @@ void exibirMenu() {
     printf("\033[1;32m[2]\033[0m Temperatura\n");
     printf("\033[1;32m[3]\033[0m Massa\n");
     printf("\033[1;32m[4]\033[0m Volume\n");
+    printf("\033[1;32m[5]\033[0m Tempo\n");
     printf("\033[1;32m[0]\033[0m Sair\n");
     printf("==============================\n");
     printf("Escolha qual conversao deseja fazer: ");
@@ -422,14 +423,15 @@ void InterfaceConversaoTempo(){
         printf("\033[1;32m->\033[0m Escolha: ");
         scanf("%d", &opcao);
         
-        if (opcao == 1){
+         if (opcao == 1) {
             horas_para_minutos_e_segundos(valor);
-        }else if(opcao == 2){
+        } else if (opcao == 2) {
             minutos_para_horas_e_segundos(valor);
-        }else(opcao == 3){
+        } else if (opcao == 3) {
             segundos_para_horas_e_minutos(valor);
+        } else {
+            printf("Opcao invalida! Tente novamente.\n");
         }
-        
     }while(opcao < 1 || opcao > 3);
     
 }
