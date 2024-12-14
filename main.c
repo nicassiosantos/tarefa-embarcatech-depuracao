@@ -13,6 +13,7 @@ void exibirMenu() {
     printf("\033[1;32m[1]\033[0m Comprimento\n");
     printf("\033[1;32m[2]\033[0m Temperatura\n");
     printf("\033[1;32m[3]\033[0m Massa\n");
+    printf("\033[1;32m[4]\033[0m Volume\n");
     printf("\033[1;32m[0]\033[0m Sair\n");
     printf("==============================\n");
     printf("Escolha qual conversao deseja fazer: ");
@@ -239,7 +240,6 @@ void converterUnidadesMassa(int origem, int destino, double valor){
 }
 
 
-
 void InterfaceConversaoMassa(){
     double valor;
     int unidadeOrigem;
@@ -295,7 +295,92 @@ void InterfaceConversaoMassa(){
 
     converterUnidadesMassa(unidadeOrigem, unidadeDestino, valor);
 }
+//CONVERSÃO VOLUME
 
+void convLitro(float v1, int unidade1, int unidade2){ //conversão para litro
+    float convertido;
+    if(unidade1 == 1 && unidade2 == 1){
+        printf("%2f litros sao equivalente a %f litros", v1, v1);
+    }
+    else if(unidade1 == 1 && unidade2 == 2){
+        convertido = v1 * 1000;
+        printf("%.2f litros sao equivalente a %f Mililitros", v1, convertido);
+    }
+    else if(unidade1 == 1 && unidade2 == 3){
+        convertido = v1/1000; 
+        printf("%2f litros sao equivalente a %f Metro Cubicos", v1, convertido);
+    }
+}
+
+void convMili(float v1, int unidade1, int unidade2){ //conversão para mililitros
+    float convertido;
+    if(unidade1 == 2 && unidade2 == 1){
+        convertido = v1/1000;
+        printf("%f Mililitros sao equivalente a %f litros", v1, convertido);
+    }
+    else if(unidade1 == 2 && unidade2 == 2){
+        printf("%.2f Mililitros sao equivalente a %f Mililitros", v1, v1);
+    }
+    else if(unidade1 == 2 && unidade2 == 3){
+        convertido = v1/1000000; 
+        printf("%2f Mililitros sao equivalente a %f Metro Cubicos", v1, convertido);
+    }
+}
+
+void convMC(float v1, int unidade1, int unidade2){//conversão para metro cúbico
+    float convertido;
+    if(unidade1 == 3 && unidade2 == 1){
+        convertido = v1*1000;
+        printf("%2f Metro Cubico sao equivalente a %f litros", v1, convertido);
+    }
+    else if(unidade1 == 3 && unidade2 == 2){
+        convertido = v1 * 1000000;
+        printf("%.2f Metro Cubico sao equivalente a %f Mililitros", v1, convertido);
+    }
+    else if(unidade1 == 3 && unidade2 == 3){
+        printf("%2f Metro Cubico sao equivalente a %f Metro Cubicos", v1, v1);
+    }
+}
+
+void InterfaceConversaoVolume(){
+    int a, b;
+    float valor;
+
+    printf("=======================================================\n");
+	printf("\033[1;34mDigite o Volume de origem:\033[0m         \n");
+    printf("=======================================================\n");
+    printf("\033[1;32m[1]\033[0m  Litro\n");
+    printf("\033[1;32m[2]\033[0m  Mililitro\n");
+    printf("\033[1;32m[3]\033[0m  Metro Cúbico\n");
+    printf("==============================\n");
+    scanf("%d", &a);
+
+    if(a > 3 || a < 0){
+        printf("Numero invalido. Tente novamente."); return;
+    }
+
+    printf("\033[1;32m->\033[0m Digite o valor de origem: ");
+    scanf("%f", &valor);
+
+    system("cls");
+    printf("==============================\n");
+    printf("\n\033[1;34mSelecione uma unidade de medida para conversao:\033[0m  \n");
+    printf("\033[1;32m[1]\033[0m  Litro\n");
+    printf("\033[1;32m[2]\033[0m  Mililitro\n");        
+    printf("\033[1;32m[3]\033[0m  Metro Cubico\n");
+    printf("==============================\n");
+    scanf("%d", &b);
+
+    if(a == 1){
+    convLitro(valor,a,b);
+    }
+    else if(a == 2){
+    convMili(valor,a,b);
+    }
+    else{
+    convMC(valor,a,b);
+    }
+}
 
 int main() {
 
@@ -323,6 +408,12 @@ int main() {
                 system("pause"); // Pausar o terminal
                 system("cls || clear"); // Limpa o terminal
                 InterfaceConversaoMassa();
+                break;
+            case 4: 
+                printf("\n\033[1;36mVoce escolheu o Volume!\033[0m\n");
+                system("pause"); // Pausar o terminal
+                system("cls || clear"); // Limpa o terminal
+                InterfaceConversaoVolume();
                 break;
             case 0:
                 printf("\n\033[1;31mSaindo... Ate logo!\033[0m\n");
