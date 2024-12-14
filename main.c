@@ -382,6 +382,57 @@ void InterfaceConversaoVolume(){
     }
 }
 
+
+// Funções de conversão de tempo
+void horas_para_minutos_e_segundos(double horas) {
+    double minutos = horas * 60;
+    double segundos = horas * 3600;
+    printf("%.2f horas equivalem a %.2f minutos e %.2f segundos.\n", horas, minutos, segundos);
+}
+
+void minutos_para_horas_e_segundos(double minutos) {
+    double horas = minutos / 60;
+    double segundos = minutos * 60;
+    printf("%.2f minutos equivalem a %.2f horas e %.2f segundos.\n", minutos, horas, segundos);
+}
+
+void segundos_para_horas_e_minutos(double segundos) {
+    double horas = segundos / 3600;
+    double minutos = segundos / 60;
+    printf("%.2f segundos equivalem a %.2f horas e %.2f minutos.\n", segundos, horas, minutos);
+}
+
+void InterfaceConversaoTempo(){
+    double valor;
+    int opcao;
+
+    printf("=====================================================================\n");
+    printf("            \033[1;34mConversor de Tempo\033[0m         \n");
+    printf("=====================================================================\n");
+    printf("\033[1;32m->\033[0m Digite o valor de tempo para converter: ");
+    scanf("%lf", &valor);
+
+    do {
+        printf("=====================================================================\n");
+        printf("Selecione a unidade de origem:\n");
+        printf("\033[1;32m[1]\033[0m Horas\n");
+        printf("\033[1;32m[2]\033[0m Minutos\n");
+        printf("\033[1;32m[3]\033[0m Segundos\n");
+        printf("==============================\n");
+        printf("\033[1;32m->\033[0m Escolha: ");
+        scanf("%d", &opcao);
+        
+        if (opcao == 1){
+            horas_para_minutos_e_segundos(valor);
+        }else if(opcao == 2){
+            minutos_para_horas_e_segundos(valor);
+        }else(opcao == 3){
+            segundos_para_horas_e_minutos(valor);
+        }
+        
+    }while(opcao < 1 || opcao > 3);
+    
+}
 int main() {
 
     int opcao;
@@ -414,6 +465,12 @@ int main() {
                 system("pause"); // Pausar o terminal
                 system("cls || clear"); // Limpa o terminal
                 InterfaceConversaoVolume();
+                break;
+	    case 5:
+                printf("\n\033[1;36mVoce escolheu o Tempo!\033[0m\n");
+                system("pause"); // Pausar o terminal
+                system("cls || clear"); // Limpa o terminal
+                InterfaceConversaoTempo();
                 break;
             case 0:
                 printf("\n\033[1;31mSaindo... Ate logo!\033[0m\n");
