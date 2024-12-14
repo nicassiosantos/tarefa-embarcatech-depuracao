@@ -491,3 +491,63 @@ int main() {
 
     return 0;
 }
+
+
+// Função para converter de km/h para m/s e mph
+void converterDeKmH(double valor) {
+    double metrosPorSegundo = valor / 3.6;
+    double milhasPorHora = valor / 1.609;
+    printf("%.2f km/h equivale a %.2f m/s e %.2f mph\n", valor, metrosPorSegundo, milhasPorHora);
+}
+
+// Função para converter de m/s para km/h e mph
+void converterDeMs(double valor) {
+    double quilometrosPorHora = valor * 3.6;
+    double milhasPorHora = quilometrosPorHora / 1.609;
+    printf("%.2f m/s equivale a %.2f km/h e %.2f mph\n", valor, quilometrosPorHora, milhasPorHora);
+}
+
+// Função para converter de mph para km/h e m/s
+void converterDeMph(double valor) {
+    double quilometrosPorHora = valor * 1.609;
+    double metrosPorSegundo = quilometrosPorHora / 3.6;
+    printf("%.2f mph equivale a %.2f km/h e %.2f m/s\n", valor, quilometrosPorHora, metrosPorSegundo);
+}
+
+int main() {
+    int opcao;
+    double valor;
+    
+    printf("Conversor de unidades de velocidade\n");
+    printf("Escolha a unidade de entrada:\n");
+    printf("1 - Quilômetros por hora (km/h)\n");
+    printf("2 - Metros por segundo (m/s)\n");
+    printf("3 - Milhas por hora (mph)\n");
+    
+    printf("Digite o número correspondente à sua escolha: ");
+    scanf("%d", &opcao);
+    
+    if (opcao < 1 || opcao > 3) {
+        printf("Opção inválida!\n");
+        return 1;
+    }
+    
+    printf("Digite o valor da velocidade: ");
+    scanf("%lf", &valor);
+    
+    switch(opcao) {
+        case 1:
+            converterDeKmH(valor);
+            break;
+        case 2:
+            converterDeMs(valor);
+            break;
+        case 3:
+            converterDeMph(valor);
+            break;
+        default:
+            printf("Opção inválida!\n");
+    }
+    
+    return 0;
+}
