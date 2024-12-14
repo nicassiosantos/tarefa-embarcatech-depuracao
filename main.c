@@ -539,7 +539,7 @@ int main() {
                 printf("\n\033[1;36mVoce escolheu o Velocidade!\033[0m\n");
                 system("pause"); // Pausar o terminal
                 system("cls || clear"); // Limpa o terminal
-                InterfaceConversaoTempo();
+                iniciarConversor();
                 break;
             case 0:
                 printf("\n\033[1;31mSaindo... Ate logo!\033[0m\n");
