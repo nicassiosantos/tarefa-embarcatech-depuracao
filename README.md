@@ -54,6 +54,17 @@ Converte unidades de velocidade entre:
 - Metros por segundo (m/s)
 - Milhas por hora (mph)
 
+### 7. Bits
+
+Converte unidades de bits entre:
+
+- Bits
+- Bytes
+- Kilobytes
+- Megabytes 
+- Gigabytes 
+- Terabytes
+
 ## Como Usar
 
 ### Pré-requisitos
