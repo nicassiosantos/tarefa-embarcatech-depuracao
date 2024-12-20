@@ -144,12 +144,13 @@ Contribuições são bem-vindas! Sinta-se à vontade para melhorar o programa ou
 
 ## Colaboradores
 
-Abaixo estão listados os colaboradores deste projeto:
+Abaixo estão listados os colaboradores deste projeto  e suas contribuições:
 
-- [nicassiosantos](https://github.com/nicassiosantos)
-- [EvertonEspedito](https://github.com/EvertonEspedito)
-- [ericksonsmoura](https://github.com/ericksonsmoura)
-- [DiegoPSP](https://github.com/DiegoPSP)
-- [henr1queSantos25](https://github.com/henr1queSantos25)
-- [OsanaThiago](https://github.com/OsanaThiago)
-- [João Pasip](https://github.com/joao-pasip)
+- [nicassiosantos](https://github.com/nicassiosantos) (Conversão de Comprimento)
+- [EvertonEspedito](https://github.com/EvertonEspedito) (Menu de escolhas de conversões)
+- [ericksonsmoura](https://github.com/ericksonsmoura) (Conversão de velocidade)
+- [DiegoPSP](https://github.com/DiegoPSP) (Conversão de Tempo)
+- [henr1queSantos25](https://github.com/henr1queSantos25) (Conversão de Massa) 
+- [OsanaThiago](https://github.com/OsanaThiago) (Conversão de volume)
+- [João Pasip](https://github.com/joao-pasip) (Conversão de Bits) 
+- [Marcus Vinicius](https://github.com/MarcusVMFF) (Conversão de Temperatura)
