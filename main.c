@@ -248,7 +248,7 @@ void InterfaceConversaoTemperatura() // Interface da Conversão
         printf("\033[1;32m->\033[0m Escolha invalida\n");
         return;
     }
-=======
+}
 
 
 
