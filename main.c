@@ -248,20 +248,9 @@ void InterfaceConversaoTemperatura() // Interface da Conversão
         printf("\033[1;32m->\033[0m Escolha invalida\n");
         return;
     }
+=======
 
-    if (escolha == 1)
-    {
-        converterCelsius(destino, valor);
-    }
-    else if (escolha == 2)
-    {
-        converterKelvin(destino, valor);
-    }
-    else if (escolha == 3)
-    {
-        converterFahrenheit(destino, valor);
-    }
-}
+
 
 // Função Massa
 
