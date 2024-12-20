@@ -205,63 +205,7 @@ void converterFahrenheit(int escolha, double valor)
     printf("\033[1;32m->\033[0m Resultado: %.2f\n", resultado);
 }
 
-void InterfaceConversaoTemperatura()
-{
-    double valor;
-    int escolha;
 
-    printf("=====================================================================\n");
-    printf("            \033[1;34mConversor de Temperatura\033[0m         \n");
-    printf("=====================================================================\n");
-    printf("\033[1;32m->\033[0m Digite o valor que deseja converter: ");
-    scanf("%lf", &valor);
-
-    printf("=======================================================\n");
-    printf("\033[1;34mDigite a temperatura de Origem:\033[0m         \n");
-    printf("=======================================================\n");
-
-    printf("\033[1;32m[1]\033[0m  Celsius\n");
-    printf("\033[1;32m[2]\033[0m  Kelvin\n");
-    printf("\033[1;32m[3]\033[0m  Fahrenheit\n");
-    printf("==============================\n");
-    scanf("%d", &escolha);
-
-    if (escolha < 1 || escolha > 3)
-    {
-        printf("\033[1;32m->\033[0m Escolha invalida\n");
-        return;
-    }
-
-    printf("=======================================================\n");
-    printf("\033[1;34mDigite a temperatura de Destino:\033[0m         \n");
-    printf("=======================================================\n");
-
-    printf("\033[1;32m[1]\033[0m  Celsius\n");
-    printf("\033[1;32m[2]\033[0m  Kelvin\n");
-    printf("\033[1;32m[3]\033[0m  Fahrenheit\n");
-    printf("==============================\n");
-    int destino;
-    scanf("%d", &destino);
-
-    if (destino < 1 || destino > 3)
-    {
-        printf("\033[1;32m->\033[0m Escolha invalida\n");
-        return;
-    }
-
-    if (escolha == 1)
-    {
-        converterCelsius(destino, valor);
-    }
-    else if (escolha == 2)
-    {
-        converterKelvin(destino, valor);
-    }
-    else if (escolha == 3)
-    {
-        converterFahrenheit(destino, valor);
-    }
-}
 
 // Função Massa
 
