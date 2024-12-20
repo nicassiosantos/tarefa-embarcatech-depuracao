@@ -205,7 +205,7 @@ void converterFahrenheit(int escolha, double valor)
     printf("\033[1;32m->\033[0m Resultado: %.2f\n", resultado);
 }
 
-void InterfaceConversaoTemperatura()
+void InterfaceConversaoTemperatura() // Interface da Conversão
 {
     double valor;
     int escolha;
