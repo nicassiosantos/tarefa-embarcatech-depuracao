@@ -18,6 +18,7 @@ void exibirMenu()
     printf("\033[1;32m[5]\033[0m Tempo\n");
     printf("\033[1;32m[6]\033[0m Velocidade\n");
     printf("\033[1;32m[7]\033[0m Dados (Bits, Bytes, KB, MB, GB, TB)\n");
+    printf("\033[1;32m[8]\033[0m Area\n");
     printf("\033[1;32m[0]\033[0m Sair\n");
     printf("==============================\n");
     printf("Escolha qual conversao deseja fazer: ");
@@ -249,8 +250,6 @@ void InterfaceConversaoTemperatura() // Interface da Conversão
         return;
     }
 }
-
-
 
 // Função Massa
 
@@ -732,6 +731,73 @@ void InterfaceConversaoDados()
     converterDados(valor, unidadeOrigem, unidadeDestino);
 }
 
+// funcao de área
+void converterUnidadesArea(double valor, int unidadeOrigem, int unidadeDestino)
+{
+    double resultado;
+
+    if (unidadeOrigem == 1 && unidadeDestino == 2)
+    {
+        resultado = valor * 10000; // De metros quadrados para centímetros quadrados
+    }
+    else if (unidadeOrigem == 2 && unidadeDestino == 1)
+    {
+        resultado = valor / 10000; // De centímetros quadrados para metros quadrados
+    }
+    else if (unidadeOrigem == unidadeDestino)
+    {
+        resultado = valor; // Conversão para a mesma unidade
+    }
+    else
+    {
+        printf("Conversão de área inválida!\n");
+        return;
+    }
+
+    printf("\033[1;32m->\033[0m Resultado: %.2f %s\n", resultado, (unidadeDestino == 1) ? "m2" : "cm2");
+}
+
+int obterOpcaoUnidade()
+{
+    int unidade;
+    printf("\033[1;32m[1]\033[0m Metro quadrado (m2)\n");
+    printf("\033[1;32m[2]\033[0m Centímetro quadrado (cm2)\n");
+    printf("==============================\n");
+    printf("\033[1;32m->\033[0m Escolha a unidade: ");
+    scanf("%d", &unidade);
+
+    while (unidade < 1 || unidade > 2)
+    {
+        printf("Opção inválida. Digite 1 para metro quadrado ou 2 para centímetro quadrado:\n");
+        scanf("%d", &unidade);
+    }
+    return unidade;
+}
+
+void InterfaceConversaoArea()
+{
+    double valor;
+    int unidadeOrigem, unidadeDestino;
+
+    printf("=====================================================================\n");
+    printf(" \033[1;34mConversor de Unidades de Area\033[0m \n");
+    printf("=====================================================================\n");
+
+    printf("\033[1;32m->\033[0m Digite o valor a ser convertido: ");
+    scanf("%lf", &valor);
+
+    printf("===================================================================\n");
+    printf("  \033[1;34mSelecione a Unidade de Origem:\033[0m \n");
+    printf("===================================================================\n");
+    unidadeOrigem = obterOpcaoUnidade();
+
+    printf("===================================================================\n");
+    printf("  \033[1;34mSelecione a Unidade de Destino:\033[0m \n");
+    printf("===================================================================\n");
+    unidadeDestino = obterOpcaoUnidade();
+
+    converterUnidadesArea(valor, unidadeOrigem, unidadeDestino);
+}
 int main()
 {
 
@@ -786,6 +852,14 @@ int main()
             system("cls || clear"); // Limpa o terminal
             InterfaceConversaoDados();
             break;
+
+        case 8:
+            printf("\n\033[1;36mVoce escolheu a Area!\033[0m\n");
+            system("pause");
+            system("cls || clear");
+            InterfaceConversaoArea(); // Chamada da função para conversão de área
+            break;
+
         case 0:
             printf("\n\033[1;31mSaindo... Ate logo!\033[0m\n");
             break;
