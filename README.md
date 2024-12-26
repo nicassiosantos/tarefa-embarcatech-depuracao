@@ -65,6 +65,14 @@ Converte unidades de bits entre:
 - Gigabytes 
 - Terabytes
 
+### 7. Area
+
+Converte unidades de area entre:
+
+- Metro Quadrado
+- Centimetro Quadrado
+
+
 ## Como Usar
 
 ### Pré-requisitos
@@ -98,6 +106,7 @@ Converte unidades de bits entre:
    - `[5] Tempo`
    - `[6] Velocidade`
    - `[7] Dados (Bits, Bytes, KB, MB, GB, TB)`
+   - `[8] Area`
    - `[0] Sair`
 
 2. **Escolha uma opção digitando o número correspondente** e pressione `Enter`.
@@ -154,3 +163,4 @@ Abaixo estão listados os colaboradores deste projeto  e suas contribuições:
 - [OsanaThiago](https://github.com/OsanaThiago) (Conversão de volume)
 - [João Pasip](https://github.com/joao-pasip) (Conversão de Bits) 
 - [Marcus Vinicius](https://github.com/MarcusVMFF) (Conversão de Temperatura)
+- [Asafe Santana](https://github.com/AsafeSantana) (Conversão de Área)
